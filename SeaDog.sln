@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaDog", "SeaDog\SeaDog.csproj", "{263DF6DC-BABD-4E49-9648-16D1AAF0E389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaDog", "SeaDog\SeaDog.csproj", "{AE72DC52-41A2-4462-8A81-433906CFA74C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{263DF6DC-BABD-4E49-9648-16D1AAF0E389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE72DC52-41A2-4462-8A81-433906CFA74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE72DC52-41A2-4462-8A81-433906CFA74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE72DC52-41A2-4462-8A81-433906CFA74C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE72DC52-41A2-4462-8A81-433906CFA74C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{263DF6DC-BABD-4E49-9648-16D1AAF0E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{263DF6DC-BABD-4E49-9648-16D1AAF0E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{263DF6DC-BABD-4E49-9648-16D1AAF0E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
