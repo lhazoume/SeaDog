@@ -16,11 +16,17 @@ namespace Player
         private void button1_Click(object sender, EventArgs e)
         {
             int n = 100;
-            logRtb.AppendText($"Random vs Chaser{Environment.NewLine}");
-            RandomWalk rw = new RandomWalk("RW");
-            Fisherman fm = new Fisherman("FM");
-            string result = RunMatch(rw, fm, n);
-            logRtb.AppendText($"{result} {Environment.NewLine}");
+            
+            RandomWalk rw = new RandomWalk("Random");
+            Fisherman qb = new Fisherman("Qobalt");
+            Naive naive = new Naive("Naive");
+
+            logRtb.AppendText($"{rw.Name} vs {qb.Name}{Environment.NewLine}{RunMatch(rw, qb, n)}{Environment.NewLine}");
+
+            logRtb.AppendText($"{rw.Name} vs {naive.Name}{Environment.NewLine}{RunMatch(rw, naive, n)}{Environment.NewLine}");
+
+            logRtb.AppendText($"{naive.Name} vs {qb.Name}{Environment.NewLine}{RunMatch(naive, qb, n)}{Environment.NewLine}");
+
         }
 
         private string RunMatch(IPlayer player1, IPlayer player2, int numberOfRuns)
@@ -31,7 +37,7 @@ namespace Player
             {
                 IPlayer p1 = player1.Clone(),
                     p2 = player2.Clone();
-                Master master = new Master(p1, p2, 50, 10);
+                Master master = new Master(p1, p2, 50, 1);
                 Log log = new Log();
                 master.Run(log);
                 results[r] = master.Winner == "Draw" ? 0 : (master.Winner == p1.Name ? 1 : 2);

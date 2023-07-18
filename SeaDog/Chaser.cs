@@ -74,7 +74,8 @@ namespace SeaDog
             foreach (Boat boat in playerBoats)
             {
                 double[] fishDistance = board.Fish().Select(f => Location.Distance(f, boat.Location)).ToArray();
-                result += 1 / fishDistance.Min();
+                if (fishDistance.Length > 0)
+                    result += 1 / fishDistance.Min();
             }
 
             return result;

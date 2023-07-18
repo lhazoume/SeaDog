@@ -21,6 +21,10 @@ namespace SeaDog
                 moves.Add(new Move(boat.Id, 1, 0));
                 moves.Add(new Move(boat.Id, 0, -1));
                 moves.Add(new Move(boat.Id, -1, 0));
+                moves.Add(new Move(boat.Id, 1, 1));
+                moves.Add(new Move(boat.Id, 1, -1));
+                moves.Add(new Move(boat.Id, -1, -1));
+                moves.Add(new Move(boat.Id, -1, 1));
             }
 
             //Remove all impossible moves
@@ -36,11 +40,11 @@ namespace SeaDog
             #endregion
 
             double[] functionValues = new double[moves.Count];
-            double currentValue = TotalProximityToFish(board);
+            double currentValue = TotalProximityToNearestFish(board);
             for (int i = 0; i < moves.Count; i++)
             {
                 Board hypotheticalBoard = board.HypotheticalBoard(moves[i], out int fishImpact, out int crashImpact);
-                functionValues[i] = TotalProximityToFish(board) + fishImpact;
+                functionValues[i] = TotalProximityToNearestFish(hypotheticalBoard) + fishImpact;
             }
 
             double maxValue = functionValues.Max();
