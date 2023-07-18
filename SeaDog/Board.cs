@@ -52,7 +52,7 @@ namespace SeaDog
         
         public bool IsPossible(string player, Move move)
         {
-            if (Math.Abs(move.RowMove) + Math.Abs(move.ColumnMove) > 1)
+            if (Math.Abs(move.RowMove) + Math.Abs(move.ColumnMove) < 1)
                 return false;
 
             Boat targetBoat = _boats.Find(b => b.Player == player && b.Id == move.Id);
