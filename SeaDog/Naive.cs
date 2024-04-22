@@ -34,15 +34,9 @@ namespace SeaDog
 
             Location nearestFish = fish[nearestFishIndex];
 
-            Move move = new Move(boat.Id, 0, 0);
-            if (boat.Location.Row > nearestFish.Row)
-                move = new Move(boat.Id, -1, 0);
-            else if (boat.Location.Row < nearestFish.Row)
-                move = new Move(boat.Id, +1, 0);
-            else if (boat.Location.Column < nearestFish.Column)
-                move = new Move(boat.Id, 0, +1);
-            else if (boat.Location.Column > nearestFish.Column)
-                move = new Move(boat.Id, 0, -1);
+            int columnDirection = Math.Sign(nearestFish.Column - boat.Location.Column);
+            int rowDirection = Math.Sign(nearestFish.Row - boat.Location.Row);
+            Move move = new Move(boat.Id, rowDirection, columnDirection);
 
             return move;
         }

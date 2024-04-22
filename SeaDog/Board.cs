@@ -49,7 +49,7 @@ namespace SeaDog
 
             return result;
         }
-        
+
         public bool IsPossible(string player, Move move)
         {
             if (Math.Abs(move.RowMove) + Math.Abs(move.ColumnMove) > 1)

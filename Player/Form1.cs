@@ -1,5 +1,6 @@
 ﻿using SeaDog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,17 +17,21 @@ namespace Player
         private void button1_Click(object sender, EventArgs e)
         {
             int n = 100;
-            
-            RandomWalk rw = new RandomWalk("Random");
-            Fisherman qb = new Fisherman("Qobalt");
-            Naive naive = new Naive("Naive");
+            List<IPlayer> players = new List<IPlayer>()
+            {
+                new RandomWalk("Random"),
+                new Fisherman("Qobalt"),
+                new Naive("Naive"),
+                new KH("Kristy"),
+                new MB("MB")
+            };
 
-            logRtb.AppendText($"{rw.Name} vs {qb.Name}{Environment.NewLine}{RunMatch(rw, qb, n)}{Environment.NewLine}");
-
-            logRtb.AppendText($"{rw.Name} vs {naive.Name}{Environment.NewLine}{RunMatch(rw, naive, n)}{Environment.NewLine}");
-
-            logRtb.AppendText($"{naive.Name} vs {qb.Name}{Environment.NewLine}{RunMatch(naive, qb, n)}{Environment.NewLine}");
-
+            for (int i = 0; i < players.Count - 1; i++)
+                for (int j = i + 1; j < players.Count; j++)
+                {
+                    logRtb.AppendText($"{players[i].Name} vs {players[j].Name}{Environment.NewLine}{RunMatch(players[i], players[j], n)}{Environment.NewLine}");
+                    Update();
+                }
         }
 
         private string RunMatch(IPlayer player1, IPlayer player2, int numberOfRuns)

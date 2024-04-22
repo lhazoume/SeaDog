@@ -102,10 +102,11 @@ namespace SeaDog
                     if (board.IsPossible(_players[i].Name, proposition))
                     {
                         board = UpdateFromMove(board, proposition, log);
-                        gameOver = IsGameOver(board);
+                        
                     }
-                    else
-                        log.Add($"Impossible move by {_players[i].Name}");
+                    //else
+                    //    log.Add($"Impossible move by {_players[i].Name}");
+                    gameOver = IsGameOver(board);
                 }
                 rounds++;
             }

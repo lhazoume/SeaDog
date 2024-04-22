@@ -44,12 +44,14 @@
     <Compile Include="Board.cs" />
     <Compile Include="Boat.cs" />
     <Compile Include="Fisherman.cs" />
+    <Compile Include="MB.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Master.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="Chaser.cs" />
+    <Compile Include="KH.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Naive.cs" />
     <Compile Include="RandomWalk.cs" />
